@@ -26,16 +26,136 @@ credits: {
             enabled: false
         },
 	    title: {
-	    	text: 'Highcharts Bubbles'
+	    	text: 'Emerging Markets Equity Performance and Current Account Balance'
 	    },
 	
-	    series: [{
-	        data: [[97,36,79],[94,74,60],[68,76,58],[64,87,56],[68,27,73],[74,99,42],[7,93,87],[51,69,40],[38,23,33],[57,86,31]]
-	    }, {
-	        data: [[25,10,87],[2,75,59],[11,54,8],[86,55,93],[5,3,58],[90,63,44],[91,33,17],[97,3,56],[15,67,48],[54,25,81]]
-	    }, {
-	        data: [[47,47,21],[20,12,4],[6,76,91],[38,30,60],[57,98,64],[61,17,80],[83,60,13],[67,78,75],[64,12,10],[30,77,82]]
-	    }]
+	 series: [{
+            /* this empty bubble keeps other bubbles relative to each other in size */
+            name: '', data: [{x:0,y:0,z:0}], showInLegend: false, color: '#FFFFFF', enableMouseTracking: false
+        },{
+            dataLabels: {
+                enabled: true,
+                x:0,
+                formatter:function() {
+                    return this.point.name;
+                },
+                style:{color:"black"}
+            },
+            name: 'South America', data: [{
+			
+                "x": -19.0,
+                "y": -3.248,
+                "z": 14,
+                "name":"Brazil"
+            }, {
+                "x": -19.9,
+                "y": -3.6,
+                "z": 38,
+                "name":"Chile"
+            },{
+                "x": -16.1,
+                "y": -2.9,
+                "z": 25,
+                "name":"Colombia"
+            },{
+                "x": -11.1,
+                "y": -1.0,
+                "z": 24,
+                "name":"Mexico"
+            }]
+        },
+		{
+            dataLabels: {
+                enabled: true,
+                x:0,
+                formatter:function() {
+                    return this.point.name;
+                },
+                style:{color:"black"}
+            },
+            name: 'Asia', data: [{
+			
+                "x": -4.2,
+                "y": 2.9,
+                "z": 9,
+                "name":"China"
+            }, {
+                "x": -21,
+                "y": -4.6,
+                "z": 19,
+                "name":"India"
+            },{
+                "x": -23.2,
+                "y": -3.3,
+                "z": 27,
+                "name":"Indonesia"
+            }, {
+                "x": -5.2,
+                "y": 2.4,
+                "z": 35,
+                "name":"Korea"
+            },{
+                "x": -4.6,
+                "y": 5.7,
+                "z": 37,
+                "name":"Malaysia"
+            },{
+                "x": -5.1,
+                "y": 2.0,
+                "z": 29,
+                "name":"Philippines"
+            },{
+                "x": -14.0,
+                "y": 1.1,
+                "z": 36,
+                "name":"Thailand"
+            }]
+        },{
+            dataLabels: {
+                enabled: true,
+                x:0,
+                formatter:function() {
+                    return this.point.name;
+                },
+                style:{color:"black"}
+            },
+            name: 'EMEA', data: [{
+			
+                "x": -21.0,
+                "y": -1.8,
+                "z": 51,
+                "name":"Czech Rep."
+            }, {
+                "x": -17.6,
+                "y": -1.6,
+                "z": 17,
+                "name":"Egypt"
+            },{
+                "x": -8.0,
+                "y": 1.6,
+                "z": 34,
+                "name":"Russia"
+            },{
+                "x": -16.6,
+                "y": -3.5,
+                "z": 74,
+                "name":"Poland"
+            }
+			,{
+                "x": -14.9,
+                "y": -6.5,
+                "z": 40,
+                "name":"S. Africa"
+            },{
+                "x": -26.5,
+                "y": -7.3,
+                "z": 43,
+                "name":"Turkey"
+            }]
+        }
+		
+		
+		]
 	
 	});
     
@@ -44,7 +164,6 @@ credits: {
 
 </script>	
 	
-	
-	<div id="container" style="width:100%; height:400px;"></div>
+	<div id="container" style="height: 600px; width: 900px; margin: 0 auto"></div>
 
 </html>
